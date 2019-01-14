@@ -1,0 +1,1 @@
+{"version":3,"sources":["/home/vinoth/Projects/cra-redux-saga/src/index.scss"],"names":[],"mappings":"AAEA,gBAGE,WAAY,CACb","file":"main.b1acb2ce.chunk.css","sourcesContent":["@import \"~bootstrap/dist/css/bootstrap.min.css\";\n\nhtml,\nbody,\n#root {\n  height: 100%;\n}\n"]}
