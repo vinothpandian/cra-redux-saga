@@ -3,32 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/core": "^10.0.6",
-    "@emotion/styled": "^10.0.6",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.3.1",
+    "@emotion/styled": "^11.14.0",
+    "axios": "^1.13.0",
+    "bootstrap": "^5.3.0",
     "immutable": "^4.0.0-rc.12",
-    "lodash": "^4.17.21",
-    "node-sass": "^9.0.0",
-    "react": "16.8.0-alpha.0",
-    "react-dom": "16.8.0-alpha.0",
+    "lodash": "^4.18.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
     "react-spring": "^7.2.8",
-    "reactstrap": "^7.0.2",
+    "reactstrap": "^9.2.0",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
     "redux-form": "^8.1.0",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^1.3.0",
+    "sass": "^1.107.1",
+    "@emotion/react": "^11.14.0",
+    "@redux-devtools/extension": "^3.3.0",
+    "prop-types": "^15.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "start": "vite --port 3000",
+    "build": "vite build",
+    "test": "vitest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test:run": "vitest run"
   },
   "browserslist": [
     ">0.2%",
@@ -37,12 +38,16 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0",
-    "gh-pages": "^2.0.1",
-    "redux-devtools-extension": "^2.13.7"
+    "vite": "^8.2.4",
+    "@vitejs/plugin-react": "^6.0.1",
+    "vitest": "^4.1.12",
+    "jsdom": "^28.1.0",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "gh-pages": "^6.3.0"
   },
-  "homepage": "http://vinothpandian.github.io/cra-redux-saga"
+  "homepage": "http://vinothpandian.github.io/cra-redux-saga",
+  "engines": {
+    "node": ">=22.12.0"
+  }
 }
