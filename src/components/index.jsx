@@ -1,5 +1,5 @@
-import { Container } from "reactstrap";
-import styled from "@emotion/styled/macro";
+import { Container } from 'reactstrap';
+import styled from '@emotion/styled';
 
 const InnerContainer = styled(Container)`
   height: calc(100% - 56px);

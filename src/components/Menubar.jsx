@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -6,9 +6,9 @@ import {
   NavItem,
   NavLink,
   NavbarToggler,
-  Collapse
-} from "reactstrap";
-import { NavLink as Link } from "react-router-dom";
+  Collapse,
+} from 'reactstrap';
+import { NavLink as Link } from 'react-router-dom';
 
 const Menubar = () => {
   const [isOpen, toggleState] = useState(false);
@@ -24,7 +24,7 @@ const Menubar = () => {
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="ml-auto" navbar>
+        <Nav className="ms-auto" navbar>
           <NavItem>
             <NavLink tag={Link} exact to="/">
               Home

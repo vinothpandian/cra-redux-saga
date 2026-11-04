@@ -1,65 +1,16 @@
-# Create-React-App with Redux, Redux-Saga
+# React Redux Saga starter
 
-#### React, Redux, Redux-Saga, Bootstrap 4 boilerplate with SASS support
+React 16, Redux, Redux Saga, Redux Form, React Spring, Emotion, and Bootstrap. The demo retains typed name updates, asynchronous name loading, animated transitions, responsive navigation, and the package directory.
 
-## List of packages
+Requires Node.js 22.12+.
 
-- [react](https://reactjs.org/)
-- [react-router](https://github.com/ReactTraining/react-router)
-- [redux](https://redux.js.org/)
-- [redux-saga](https://redux-saga.js.org/)
-- [redux-actions](https://redux-actions.js.org/)
-- [immutable](https://facebook.github.io/immutable-js/)
-- [axios](https://github.com/axios/axios)
-- [material-ui](https://material-ui-next.com/)
-- [emotion](https://emotion.sh/)
-- [react-spring](http://react-spring.surge.sh/)
-- [react-loadable](https://github.com/jamiebuilds/react-loadable)
-- [lodash](https://lodash.com/)
-- [redux-devtools](https://github.com/zalmoxisus/redux-devtools-extension)
+- `npm ci` or Yarn 1 `yarn install --frozen-lockfile`: install dependencies.
+- `npm start`: start Vite at port 3000.
+- `npm run test:run`: run regression tests once.
+- `npm test`: watch tests.
+- `npm run build`: generate `build/` for the `/cra-redux-saga/` GitHub Pages subpath.
+- `npm run deploy`: build and publish the existing GitHub Pages branch using gh-pages.
 
-## Getting Started
+Vite replaces Create React App. Emotion no longer needs the Babel macro, Bootstrap/Reactstrap are upgraded together, and Redux Saga and DevTools use their current packages. Hash routing preserves direct reloads on GitHub Pages. For a different deployment path, change the production base and PUBLIC_URL together in `vite.config.mjs`.
 
-To get started, first install all the necessary dependencies.
-
-```
-git clone https://github.com/vinothpandian/react-redux-boilerplate.git --depth=1 <your-app-folder>
-```
-
-### To install the necessary packages in `<your-app-folder>` folder, do
-
-```
-npm install
-```
-
-or if you use `yarn` then
-
-```
-yarn
-```
-
-### To run a development server
-
-```
-npm run start
-```
-
-or with `yarn`
-
-```
-yarn start
-```
-
-The developement server will run in http://localhost:8080/
-
-### To build the code use
-
-```
-npm run build
-```
-
-or with `yarn`
-
-```
-yarn build
-```
+Service-worker registration remains disabled by default. The build generates an offline shell worker so the existing opt-in `serviceWorker.register()` remains available. Tests mock the existing uinames.com endpoint; live availability of that third-party API is not covered.

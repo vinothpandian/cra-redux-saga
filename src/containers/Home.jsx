@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   Row,
   Button,
@@ -11,18 +11,17 @@ import {
   Col,
   CardHeader,
   InputGroup,
-  InputGroupAddon,
-  Form
-} from "reactstrap";
-import { Transition } from "react-spring";
+  Form,
+} from 'reactstrap';
+import { Transition } from 'react-spring';
 
-import { changeName, getNameAsync } from "../redux/actions";
-import InnerContainer from "../components";
+import { changeName, getNameAsync } from '../redux/actions';
+import InnerContainer from '../components';
 
-const Home = props => {
-  const [name, setName] = useState("");
+const Home = (props) => {
+  const [name, setName] = useState('');
 
-  const submitForm = event => {
+  const submitForm = (event) => {
     event.preventDefault();
     props.changeName(name);
   };
@@ -34,18 +33,18 @@ const Home = props => {
           <Card>
             <CardHeader>
               <h2>
-                {"Welcome "}
+                {'Welcome '}
                 <Transition
                   items={props.name}
                   from={{
-                    position: "absolute",
-                    paddingLeft: "0.5rem",
-                    opacity: 0
+                    position: 'absolute',
+                    paddingLeft: '0.5rem',
+                    opacity: 0,
                   }}
                   enter={{ opacity: 1 }}
                   leave={{ opacity: 0 }}
                 >
-                  {name => props => <span style={props}>{name}</span>}
+                  {(name) => (props) => <span style={props}>{name}</span>}
                 </Transition>
               </h2>
             </CardHeader>
@@ -55,21 +54,19 @@ const Home = props => {
                   <Input
                     placeholder="Your name"
                     value={name}
-                    onChange={event => {
+                    onChange={(event) => {
                       setName(event.target.value);
                     }}
                   />
-                  <InputGroupAddon addonType="append">
                     <Button color="success" onClick={submitForm}>
                       Update name!
                     </Button>
-                  </InputGroupAddon>
                 </InputGroup>
               </Form>
               <br />
               <Button
                 color="primary"
-                onClick={event => {
+                onClick={(event) => {
                   event.preventDefault();
                   props.getNameAsync();
                 }}
@@ -87,25 +84,20 @@ const Home = props => {
 Home.propTypes = {
   name: PropTypes.string.isRequired,
   changeName: PropTypes.func.isRequired,
-  getNameAsync: PropTypes.func.isRequired
+  getNameAsync: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
-  return {
-    name: state.name.name
-  };
-};
+const mapStateToProps = (state) => ({
+  name: state.name.name,
+});
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       changeName,
-      getNameAsync
+      getNameAsync,
     },
     dispatch
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
